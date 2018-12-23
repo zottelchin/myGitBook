@@ -38,3 +38,35 @@ for index, element := range array {
 ```
 In der Schleife kann man immer auf das Element zugreifen, ausßerdem bekommt man den Index im Array
 
+## Type Assertion
+### Type Switch
+```golang
+switch val := c.Value.(type) {
+	case string:
+		return val
+	case int:
+		return strconv.Itoa(val)
+	case int16:
+		return strconv.FormatInt(int64(val), 10)
+	case int32:
+		return strconv.FormatInt(int64(val), 10)
+	case int8:
+		return strconv.FormatInt(int64(val), 10)
+	case int64:
+		return strconv.FormatInt(val, 10)
+	case float32:
+		return strconv.FormatFloat(float64(val), 'f', 3, 32)
+	case float64:
+		return strconv.FormatFloat(val, 'f', 3, 64)
+	case bool:
+		return strconv.FormatBool(val)
+	}
+	return ""
+```
+### Type Assertion
+```golang
+t := i.(T)
+...
+t, ok := i.(T)
+...
+```
