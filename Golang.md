@@ -70,3 +70,6 @@ t := i.(T)
 t, ok := i.(T)
 ...
 ```
+## Crosscompiling
+Für Standart Go reicht: `GOOS=linux go build`
+Wenn SQLite verwendet wird, wird es etwas aufwendiger. Dann braucht man `CGO_ENABLED=1 GOOS=linux go build`
