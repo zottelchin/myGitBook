@@ -36,6 +36,11 @@ for index, element := range array {
     ....
 }
 ```
+### Unendlich lange Warten
+Tut einfach nichts, braucht aber lange. Select wartet eigentlich auf die Rückgabe eines Chanels, wenn es keinen gibt, wartet es halt sehr lange.
+```golang
+select {}
+```
 In der Schleife kann man immer auf das Element zugreifen, ausßerdem bekommt man den Index im Array
 
 ## Type Assertion
